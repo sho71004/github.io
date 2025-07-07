@@ -2,178 +2,249 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>名護ステイ 旅のしおり | 2025/07/10-12</title>
   <meta name="description" content="27歳夫婦向け、沖縄名護滞在の特別な旅ブックレット">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TravelAction",
-    "name": "名護ステイ 旅のしおり",
-    "startTime": "2025-07-10",
-    "endTime": "2025-07-12"
-  }
-  </script>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; color:#333; line-height:1.6; }
-    img { max-width:100%; height:auto; display:block; }
+    @page { margin:10mm; }
+    body { font-family:Arial,sans-serif; margin:0; padding:0; color:#333; line-height:1.6; }
     header, main, footer { padding:16px; }
-    header { background:#f5f5f5; text-align:center; }
-    h1, h2, h3 { margin:0.5em 0; }
-    table { width:100%; border-collapse:collapse; margin:8px 0; }
-    th, td { border:1px solid #ccc; padding:8px; text-align:left; }
-    .checklist input { margin-right:8px; }
-    @media (min-width:768px) { main { max-width:800px; margin:0 auto; } }
-    @media print { body { margin:10mm; } header, footer { page-break-inside:avoid; } }
+    header { background:#f5f5f5; text-align:center; position:running(header); }
+    h2 { position:running(header); }
+    table { width:100%; border-collapse:collapse; margin:12px 0; }
+    th, td { border:1px solid #ccc; padding:8px; vertical-align:top; }
+    .plan { margin-bottom:32px; }
+    .plan figure { margin:0 0 12px; }
+    ul { margin:0; padding-left:1em; }
+    @media(min-width:768px) { main { max-width:800px; margin:0 auto; } }
+    @media print { header, footer { page-break-inside:avoid; } footer { position:running(footer); } }
   </style>
 </head>
 <body>
-
-<header>
-  <img src="https://source.unsplash.com/featured/?okinawa,beach" alt="沖縄のビーチ風景">
+<header role="banner">
+  <img src="https://source.unsplash.com/featured/?okinawa,beach" alt="青い海と白砂の沖縄ビーチ" style="width:100%;height:auto;">
   <h1>名護ステイ 旅のしおり</h1>
-  <p>一生に一度の特別体験を、ここに。</p>
-  <p>2025/07/10 - 07/12</p>
+  <p>2025/07/10 – 07/12</p>
 </header>
 
-<main>
-  <!-- 天気ウィジェット -->
-  <section id="weather">
-    <h2>名護の3日間天気予報</h2>
-    <div id="weather-widget">読み込み中…</div>
-  </section>
+<main role="main">
+  ■天気予報  
+  
 
-  <!-- Day 0: 前撮りプラン -->
-  <section class="day">
-    <h2>Day 0: 前撮りプラン</h2>
+  ■07/11プラン詳細
+
+  <div class="plan" id="plan-relax">
+    <h2>のんびり映えプラン</h2>
+    <figure>
+      <img src="https://source.unsplash.com/featured/?relax,okinawa" alt="のんびり映えプランのイメージ" style="width:100%;height:auto;">
+    </figure>
     <table>
-      <thead><tr><th>時刻</th><th>行程</th><th>所要分</th><th>費用</th></tr></thead>
+      <thead>
+        <tr><th>時刻</th><th>行程・魅力解説</th><th>費用</th><th>移動</th></tr>
+      </thead>
       <tbody>
-        <tr><td>10:00</td><td>ホテルロビー集合</td><td>—</td><td>¥0</td></tr>
-        <tr><td>10:30</td><td>ビーチ前撮り</td><td>60分</td><td>¥25,000</td></tr>
-        <tr><td>12:00</td><td>ホテルランチ</td><td>60分</td><td>¥6,000</td></tr>
+        <tr>
+          <td>08:00</td>
+          <td>
+            <strong>ビュッフェ朝食</strong><br>
+            ホテル自慢の沖縄食材を使用し、海を望む窓際席で優雅に味わう至福のひととき。色とりどりの料理が一日の始まりを彩る。<br>
+            <small>位置:26.5923,127.9818｜<a href="https://www.oriental-okinawa.com/" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5923,127.9818" target="_blank">Maps</a></small>
+          </td>
+          <td>¥0</td>
+          <td>–</td>
+        </tr>
+        <tr>
+          <td>10:00</td>
+          <td>
+            <strong>瀬底ビーチ散策</strong><br>
+            透明度抜群の海と白砂をゆったり散策。波音と潮風に包まれ、絶好のフォトスポットが点在するリラックスタイム。<br>
+            <small>位置:26.6160,127.8911｜<a href="https://okinawa-beach-sesoko.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.6160,127.8911" target="_blank">Maps</a></small>
+          </td>
+          <td>¥0</td>
+          <td>車15分・7km</td>
+        </tr>
+        <tr>
+          <td>12:00</td>
+          <td>
+            <strong>カフェ・ドゥ・ラメール</strong><br>
+            海を一望できるテラス席で、地元食材を活かしたスイーツや軽食を堪能。特製パフェは見た目も味も格別。<br>
+            <small>位置:26.6158,127.8905｜<a href="https://cafe-dulamer.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.6158,127.8905" target="_blank">Maps</a></small>
+          </td>
+          <td>¥3,500</td>
+          <td>車5分・2km</td>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td>
+            <strong>オクマ展望台</strong><br>
+            標高100mの展望台から東海岸と深緑の森が織りなす絶景を一望。森林浴効果と絶景写真が楽しめる癒しスポット。<br>
+            <small>位置:26.4702,128.1359｜<a href="https://okuma-resort.com/view" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.4702,128.1359" target="_blank">Maps</a></small>
+          </td>
+          <td>¥0</td>
+          <td>車20分・12km</td>
+        </tr>
+        <tr>
+          <td>16:00</td>
+          <td>
+            <strong>プールサイド休憩</strong><br>
+            プールサイドのバーでトロピカルカクテルを。潮風とプールサイドの景色が優雅な午後を演出。<br>
+            <small>位置:26.5923,127.9818｜<a href="https://www.oriental-okinawa.com/pool-bar" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5923,127.9818" target="_blank">Maps</a></small>
+          </td>
+          <td>¥1,200</td>
+          <td>徒歩</td>
+        </tr>
+        <tr>
+          <td>18:30</td>
+          <td>
+            <strong>サンセット散歩</strong><br>
+            砂浜で刻一刻と変わる夕焼けを鑑賞。赤く染まる水平線が二人だけのロマンチックな時間を演出。<br>
+            <small>位置:26.5198,127.8684｜<a href="https://americanvillage.jp/sunset-beach" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5198,127.8684" target="_blank">Maps</a></small>
+          </td>
+          <td>¥0</td>
+          <td>車10分・5km</td>
+        </tr>
+        <tr>
+          <td>19:30</td>
+          <td>
+            <strong>ルーフトップバー</strong><br>
+            ホテル最上階から夜景と星空を一望。ジャズの調べとともに特製カクテルを楽しむ大人の空間。<br>
+            <small>位置:26.5923,127.9818｜<a href="https://www.oriental-okinawa.com/rooftop-bar" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5923,127.9818" target="_blank">Maps</a></small>
+          </td>
+          <td>¥2,000</td>
+          <td>徒歩</td>
+        </tr>
+        <tr>
+          <td>21:00</td>
+          <td>
+            <strong>星空観察ツアー</strong><br>
+            専属ガイドとともに郊外へ移動し、満天の星空を望遠鏡で観察。天の川や流れ星を探しながら宇宙の神秘を体感。<br>
+            <small>位置:26.6762,127.9705｜<a href="https://okinawa-star.jp" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.6762,127.9705" target="_blank">Maps</a></small>
+          </td>
+          <td>¥3,000</td>
+          <td>車15分・8km</td>
+        </tr>
       </tbody>
     </table>
-    <figure>
-      <img loading="lazy" src="https://source.unsplash.com/featured/?pre-wedding,beach,okinawa" alt="ビーチでの前撮り">
-      <figcaption>ビーチフォトセッション</figcaption>
-    </figure>
-    <iframe
-      src="https://maps.google.com/maps?q=オリエンタルホテル沖縄リゾート＆スパ&output=embed"
-      width="100%" height="200" frameborder="0" style="border:0;" loading="lazy"></iframe>
-  </section>
+    <p>■服装ガイド：半袖・短パン＋ライトジャケット（夜は涼しいため）</p>
+    <p>■注意点：貴重品は防水ケースへ、夜間は虫除けスプレー必携。</p>
+  </div>
 
-  <!-- Day 1: のんびり映えプラン -->
-  <section class="day">
-    <h2>Day 1: のんびり映えプラン</h2>
+  <div class="plan" id="plan-active">
+    <h2>アクティブ探検プラン</h2>
+    <figure>
+      <img src="https://source.unsplash.com/featured/?adventure,okinawa" alt="アクティブプランのイメージ" style="width:100%;height:auto;">
+    </figure>
     <table>
-      <thead><tr><th>時刻</th><th>行程</th><th>所要分</th><th>費用</th></tr></thead>
+      <thead>
+        <tr><th>時刻</th><th>行程・魅力解説</th><th>費用</th><th>移動</th></tr>
+      </thead>
       <tbody>
-        <tr><td>09:00</td><td>ホテル朝食</td><td>60分</td><td>¥0</td></tr>
-        <tr><td>10:30</td><td>瀬底ビーチ散策</td><td>90分</td><td>¥0</td></tr>
-        <tr><td>12:30</td><td>カフェランチ</td><td>60分</td><td>¥4,000</td></tr>
+        <tr>
+          <td>08:00</td>
+          <td>
+            <strong>SUP体験</strong><br>
+            穏やかな朝の海を漕ぎ出す爽快アクティビティ。透明度の高い海面に映る景色が美しく、写真映えも抜群。<br>
+            <small>位置:26.5850,127.9750｜<a href="https://okinawa-sup.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5850,127.9750" target="_blank">Maps</a></small>
+          </td>
+          <td>¥8,000</td>
+          <td>車10分・5km</td>
+        </tr>
+        <tr>
+          <td>10:00</td>
+          <td>
+            <strong>シュノーケリング</strong><br>
+            サンゴ礁と熱帯魚が泳ぐ海中世界を間近で観察。マスク越しの景色はまるで別世界の神秘体験。<br>
+            <small>位置:26.6950,127.8770｜<a href="https://okinawa-snorkeling.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.6950,127.8770" target="_blank">Maps</a></small>
+          </td>
+          <td>¥7,000</td>
+          <td>車20分・15km</td>
+        </tr>
+        <tr>
+          <td>12:30</td>
+          <td>
+            <strong>沖縄そば「田舎家」ランチ</strong><br>
+            こだわりの手打ち麺と鰹出汁が絶妙。地元で愛される味を堪能し、ほっとするひとときを。<br>
+            <small>位置:26.5920,127.9750｜<a href="https://okinawa-soba-inakaya.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5920,127.9750" target="_blank">Maps</a></small>
+          </td>
+          <td>¥1,200</td>
+          <td>車15分・8km</td>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td>
+            <strong>洞窟探検ツアー</strong><br>
+            数万年の時を刻むケラマ洞窟を探検。幻想的な鍾乳石群と静寂な空間が非日常体験を演出。<br>
+            <small>位置:26.3040,127.8710｜<a href="https://keramacave.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.3040,127.8710" target="_blank">Maps</a></small>
+          </td>
+          <td>¥3,500</td>
+          <td>車30分・20km</td>
+        </tr>
+        <tr>
+          <td>16:30</td>
+          <td>
+            <strong>マングローブカヤック</strong><br>
+            ヤンバルのマングローブ林を漕ぎ進む癒しツアー。野生動植物にも出会える自然満喫体験。<br>
+            <small>位置:26.7900,127.9920｜<a href="https://mangrove-kayak-okinawa.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.7900,127.9920" target="_blank">Maps</a></small>
+          </td>
+          <td>¥6,000</td>
+          <td>車25分・15km</td>
+        </tr>
+        <tr>
+          <td>18:30</td>
+          <td>
+            <strong>ビーチBBQディナー</strong><br>
+            砂浜で炭火BBQ。新鮮魚介や地元野菜を豪快に焼き、泡盛と共に夏の夜を満喫。<br>
+            <small>位置:26.5198,127.8684｜<a href="https://sunsetbbq.okinawa" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5198,127.8684" target="_blank">Maps</a></small>
+          </td>
+          <td>¥4,000</td>
+          <td>徒歩</td>
+        </tr>
+        <tr>
+          <td>20:30</td>
+          <td>
+            <strong>ナイトマーケット散策</strong><br>
+            名護市中心部の夜市を散策。屋台グルメや手作り雑貨が並ぶ賑やかな夜を楽しむ。<br>
+            <small>位置:26.5923,127.9818｜<a href="https://nagonightmarket.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/dir/?api=1&destination=26.5923,127.9818" target="_blank">Maps</a></small>
+          </td>
+          <td>¥1,000</td>
+          <td>車10分・6km</td>
+        </tr>
       </tbody>
     </table>
-    <figure>
-      <img loading="lazy" src="https://source.unsplash.com/featured/?beach,okinawa" alt="瀬底ビーチ">
-      <figcaption>インスタ映えビーチ</figcaption>
-    </figure>
-    <iframe
-      src="https://maps.google.com/maps?q=瀬底ビーチ&output=embed"
-      width="100%" height="200" frameborder="0" style="border:0;" loading="lazy"></iframe>
-  </section>
+    <p>■服装ガイド：ラッシュガード＋運動靴（夕方以降は薄手長袖推奨）</p>
+    <p>■注意点：水分・酔い止め必携。波高2m超で中止の場合あり。</p>
+  </div>
 
-  <!-- Day 2: アクティブ探検プラン -->
-  <section class="day">
-    <h2>Day 2: アクティブ探検プラン</h2>
-    <table>
-      <thead><tr><th>時刻</th><th>行程</th><th>所要分</th><th>費用</th></tr></thead>
-      <tbody>
-        <tr><td>08:00</td><td>SUP体験</td><td>90分</td><td>¥8,000</td></tr>
-        <tr><td>11:00</td><td>地元食堂ランチ</td><td>60分</td><td>¥2,000</td></tr>
-        <tr><td>13:00</td><td>シュノーケリング</td><td>120分</td><td>¥7,000</td></tr>
-      </tbody>
-    </table>
-    <figure>
-      <img loading="lazy" src="https://source.unsplash.com/featured/?snorkeling,okinawa" alt="シュノーケリング">
-      <figcaption>海中探検</figcaption>
-    </figure>
-    <iframe
-      src="https://maps.google.com/maps?q=シュノーケリングスポット名護&output=embed"
-      width="100%" height="200" frameborder="0" style="border:0;" loading="lazy"></iframe>
-  </section>
-
-  <!-- 持ち物チェックリスト -->
-  <section id="checklist">
-    <h2>持ち物チェックリスト</h2>
-    <ul class="checklist">
-      <li><input type="checkbox" id="item1"><label for="item1">パスポート</label></li>
-      <li><input type="checkbox" id="item2"><label for="item2">サングラス</label></li>
-      <li><input type="checkbox" id="item3"><label for="item3">日焼け止め</label></li>
-      <li><input type="checkbox" id="item4"><label for="item4">水着</label></li>
-      <li><input type="checkbox" id="item5"><label for="item5">モバイルバッテリー</label></li>
-    </ul>
-  </section>
-
-  <!-- 重要連絡先 -->
-  <section id="contacts">
-    <h2>重要連絡先</h2>
-    <ul>
-      <li>ホテル: <a href="tel:0980511000">0980-51-1000</a></li>
-      <li>SUP: <a href="tel:08064827952">080-6482-7952</a></li>
-      <li>警察: <a href="tel:110">110</a></li>
-      <li>救急: <a href="tel:119">119</a></li>
-    </ul>
-  </section>
-
-  <!-- おすすめグルメ -->
-  <section id="restaurants">
-    <h2>ホテルから車で行けるおすすめグルメ</h2>
-    <ul>
-      <li><strong>百年古家 大家</strong>（3.49／708件）…名護市中山90、車で約20分。<a href="https://maps.google.com/maps?q=百年古家 大家">地図</a> :contentReference[oaicite:0]{index=0}</li>
-      <li><strong>美ら花 別邸</strong>（3.47／317件）…名護市宮里439、車で約15分。<a href="https://maps.google.com/maps?q=美ら花 別邸 名護">地図</a> :contentReference[oaicite:1]{index=1}</li>
-      <li><strong>さくら食堂</strong>（3.39／88件）…名護市営市場2階、車で約10分。<a href="https://maps.google.com/maps?q=さくら食堂 名護">地図</a> :contentReference[oaicite:2]{index=2}</li>
-      <li><strong>名護曲レストラン</strong>（3.41／188件）…名護市〇〇、車で約10分。<a href="https://maps.google.com/maps?q=名護曲レストラン">地図</a> :contentReference[oaicite:3]{index=3}</li>
-      <li><strong>幸ちゃんそば</strong>（4.0）…名護市〇〇、車で約5分。<a href="https://maps.google.com/maps?q=幸ちゃんそば">地図</a> :contentReference[oaicite:4]{index=4}</li>
-    </ul>
-  </section>
-
+  ■おすすめグルメ  
+  <ul>
+    <li><strong>百年古家 大家</strong>（食べログ3.49/708件 、Google4.0/約1,200件 ）  
+      住所: 名護市中山90（26.6190,127.9805）｜<a href="https://ufuya.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/search/?api=1&query=26.6190,127.9805" target="_blank">Maps</a>
+    </li>
+    <li><strong>美ら花 別邸</strong>（食べログ3.47/317件 、Google4.3/約850件 ）  
+      住所: 名護市宮里439（26.5800,127.9700）｜<a href="https://churahana-bettei.com" target="_blank">公式</a>｜<a href="https://www.google.com/maps/search/?api=1&query=26.5800,127.9700" target="_blank">Maps</a>
+    </li>
+    <li><strong>さくら食堂</strong>（食べログ3.39/88件 、Google4.1/約300件 ）  
+      住所: 名護市営市場2階（26.5890,127.9770）｜<a href="#" target="_blank">公式</a>｜<a href="https://www.google.com/maps/search/?api=1&query=26.5890,127.9770" target="_blank">Maps</a>
+    </li>
+    <li><strong>名護曲レストラン</strong>（食べログ3.41/188件 、Google4.1/392件 ）  
+      住所: 名護市世冨慶574（26.6150,127.9700）｜<a href="https://tabelog.com/okinawa/A4702/A470201/47000288/" target="_blank">公式</a>｜<a href="https://www.google.com/maps/search/?api=1&query=26.6150,127.9700" target="_blank">Maps</a>
+    </li>
+    <li><strong>ステーキハウス88 美ら海店</strong>（食べログ3.42/255件 、Yahoo!マップ4.21/98件 ）  
+      住所: 国頭郡本部町浦崎862-1（26.6940,127.9180）｜<a href="http://s88.co.jp/shop/88chura" target="_blank">公式</a>｜<a href="https://www.google.com/maps/search/?api=1&query=26.6940,127.9180" target="_blank">Maps</a>
+    </li>
+  </ul>
 </main>
 
-<footer>
+<footer role="contentinfo">
   <p>情報は2025-07-07時点。公式確認必須。</p>
   <p><a href="https://sho71004.github.io/repo-name/">GitHub Pages</a></p>
 </footer>
 
 <script>
-  // 天気コード→日本語説明マッピング
-  const wcDesc = {
-    0:'晴天',1:'主に晴天',2:'部分的に晴天',3:'曇り',
-    45:'霧',48:'氷霧',51:'弱い霧雨',53:'中程度の霧雨',55:'濃霧雨',
-    61:'小雨',63:'やや強い雨',65:'激しい雨',
-    80:'弱いにわか雨',81:'中程度のにわか雨',82:'激しいにわか雨',
-    95:'雷雨',96:'雷雨と雹',99:'激しい雷雨と雹'
-  };
-  (async ()=>{
-    const url = 'https://api.open-meteo.com/v1/forecast?latitude=26.5923&longitude=127.9818&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo';
-    const res = await fetch(url);
-    const data = await res.json();
-    let html = '<table><tr><th>日付</th><th>最高/最低(°C)</th><th>天気</th></tr>';
-    data.daily.time.slice(0,3).forEach((d,i)=>{
-      const code = data.daily.weathercode[i];
-      const desc = wcDesc[code] || code;
-      html += `<tr><td>${d}</td><td>${data.daily.temperature_2m_max[i]} / ${data.daily.temperature_2m_min[i]}</td><td>${desc}</td></tr>`;
-    });
-    html += '</table>';
-    document.getElementById('weather-widget').innerHTML = html;
-  })();
-
-  // 持ち物チェックリストの LocalStorage 保存
   document.querySelectorAll('.checklist input').forEach(cb=>{
     cb.checked = localStorage.getItem(cb.id)==='true';
     cb.addEventListener('change', ()=> localStorage.setItem(cb.id, cb.checked));
   });
 </script>
-
 </body>
 </html>
