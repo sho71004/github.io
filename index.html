@@ -3,135 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>名護ステイ完全ガイド｜雨天でも晴天でも楽しむ2スペシャルプラン</title>
-  <meta name="description" content="2025/7/10-12 名護市喜瀬滞在案内。雨天OKの2つのスペシャルプランを比較、詳細サマリ付き。おすすめグルメ情報つき。">
-  <script type="application/ld+json">{
-    "@context":"https://schema.org",
-    "@type":"TravelGuide",
-    "name":"名護ステイ完全ガイド",
-    "datePublished":"2025-07-07",
-    "about":"名護での雨天でも楽しめる2つの特別プランとグルメ案内"
-  }</script>
-  <style>
-    :root { --sea:#0fb6c8;--coral:#ff6b6b;--bg:#f7fbfc;--text:#222;font-family:'Noto Sans JP',sans-serif; }
-    *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:1.6}
-    header,nav,main,section,footer,figure{display:block}
-    header{position:relative;height:40vh;overflow:hidden}
-    header img{width:100%;height:100%;object-fit:cover}
-    header h1{position:absolute;bottom:1rem;left:1rem;color:#fff;font-size:1.8rem;text-shadow:0 0 8px rgba(0,0,0,.6);margin:0}
-    nav ul{display:flex;gap:1rem;padding:1rem;margin:0;list-style:none;background:#fff;overflow-x:auto}
-    nav a{color:var(--text);text-decoration:none;white-space:nowrap}
-    main{max-width:960px;margin:auto;padding:1rem 5vw}
-    h2{margin-top:2rem;color:var(--sea)}
-    h2.coral{color:var(--coral)}
-    .cards{display:grid;gap:1rem}
-    @media(min-width:600px){.cards{grid-template-columns:repeat(2,1fr)}}
-    .card{background:#fff;border-radius:8px;padding:1rem;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-    .card.turq{border-top:6px solid var(--sea)}
-    .card.coral{border-top:6px solid var(--coral)}
-    .card img{width:100%;border-radius:4px;margin-bottom:.5rem}
-    .summary{background:#fff;padding:1rem;border-left:4px solid var(--sea);margin-bottom:1rem}
-    .summary h4{margin:0 0 .5rem;font-size:1.1rem}
-    .summary ul{margin:0;padding-left:1.2rem}
-    .summary li{margin-bottom:.3rem}
-    iframe.map-embed{width:100%;height:200px;border:0;margin:1rem 0}
-    #chart{width:100%;height:300px;margin:auto}
-    .tasks{list-style:none;padding:0}
-    .tasks li{display:flex;align-items:center;margin:.5rem 0}
-    .tasks input{margin-right:.5rem}
-    .cta{display:inline-block;background:var(--coral);color:#fff;padding:.5rem 1rem;border-radius:4px;text-decoration:none;margin-top:1rem}
-    .select-plan{width:100%;padding:.5rem;margin:1rem 0;border:1px solid #ccc;border-radius:4px}
-    footer{background:#222;color:#ccc;text-align:center;padding:1rem;font-size:.8rem}
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module">
-    const lat=26.5935,lng=127.9708;
-    document.addEventListener('DOMContentLoaded',()=>{fetchWeather();renderChart();loadTasks();document.getElementById('planSelect').addEventListener('change',renderPlan);renderPlan();});
-    async function fetchWeather(){
-      try{
-        const res=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weathercode,temperature_2m_max,temperature_2m_min&start_date=2025-07-10&end_date=2025-07-12&timezone=Asia%2FTokyo`);
-        const data=await res.json();
-        const {time,weathercode,temperature_2m_max,temperature_2m_min}=data.daily;
-        document.querySelector('.weather').innerHTML=time.map((d,i)=>
-          `<div class="card"><strong>${d}</strong><br>天気コード:${weathercode[i]}<br>最高${temperature_2m_max[i]}℃/最低${temperature_2m_min[i]}℃</div>`
-        ).join('');
-      }catch(e){document.querySelector('.weather').textContent='天気情報取得失敗'}
-    }
-    function renderChart(){
-      new Chart(document.getElementById('chart').getContext('2d'),{type:'doughnut',data:{labels:['のんびりスペシャル','アクティブスペシャル'],datasets:[{data:[34000,42000]}]}});
-    }
-    const plans={A:{summary:`<div class="summary"><h4>概要: のんびり映えスペシャル</h4><ul><li>ラグジュアリースパ付き</li><li>プライベートガーデンで朝食</li><li>屋内プール&サンセットバー</li></ul></div>`,html:`<div class="card turq"><img src="https://source.unsplash.com/400x200/?spa,okinawa" alt="スパ体験"><h3>のんびり映えスペシャル</h3><ul><li>時間:09:00–22:00</li><li>距離:40km以内</li><li>費用:¥34,000/2名</li></ul></div>`},B:{summary:`<div class="summary"><h4>概要: アクティブ探検スペシャル</h4><ul><li>プライベートカヤック&ガイド</li><li>サンセットクルーズ付き</li><li>ナイトスター観測体験</li></ul></div>`,html:`<div class="card coral"><img src="https://source.unsplash.com/400x200/?kayak,okinawa" alt="カヤック体験"><h3>アクティブ探検スペシャル</h3><ul><li>時間:07:00–21:30</li><li>距離:180km</li><li>費用:¥42,000/2名</li></ul></div>`}};
-    function renderPlan(){const key=document.getElementById('planSelect').value;document.getElementById('planSummary').innerHTML=plans[key].summary;document.getElementById('planDisplay').innerHTML=plans[key].html;}
-    const taskKeys=['ホテル朝食','温水プール','SUP予約'];function loadTasks(){const ul=document.getElementById('tasks');ul.innerHTML=taskKeys.map(k=>{const done=localStorage.getItem(k)==='true';return `<li><input type="checkbox" data-key="${k}" ${done?'checked':''}/> ${k}</li>`;}).join('');ul.querySelectorAll('input').forEach(cb=>cb.addEventListener('change',()=>localStorage.setItem(cb.dataset.key,cb.checked)));}
+  <title>名護ステイ 旅のしおり | 2025/07/10-12</title>
+  <meta name="description" content="27歳夫婦向け、沖縄名護滞在の特別な旅ブックレット">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAction",
+    "name": "名護ステイ 旅のしおり",
+    "startTime": "2025-07-10",
+    "endTime": "2025-07-12"
+  }
   </script>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; color:#333; line-height:1.6; }
+    img { max-width:100%; height:auto; display:block; }
+    header, main, footer { padding:16px; }
+    header { background:#f5f5f5; text-align:center; }
+    h1, h2, h3 { margin:0.5em 0; }
+    table { width:100%; border-collapse:collapse; margin:8px 0; }
+    th, td { border:1px solid #ccc; padding:8px; text-align:left; }
+    .checklist input { margin-right:8px; }
+    @media (min-width:768px) { main { max-width:800px; margin:0 auto; } }
+    @media print { body { margin:10mm; } header, footer { page-break-inside:avoid; } }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="https://images.unsplash.com/photo-1576110598657-0f772cda6755?auto=format&fit=crop&w=1200&q=60" alt="沖縄の海" loading="lazy">
-    <h1>名護ステイ完全ガイド</h1>
-  </header>
-  <nav aria-label="ページ内ナビ"><ul>
-    <li><a href="#weather">天気</a></li><li><a href="#plans">プラン</a></li><li><a href="#gourmet">グルメ</a></li><li><a href="#tasks">タスク</a></li>
-  </ul></nav>
-  <main>
-    <section id="weather">
-      <h2>天気（7/10–7/12）</h2>
-      <div class="cards weather"></div>
-    </section>
+
+<header>
+  <img src="https://source.unsplash.com/featured/?okinawa,beach" alt="沖縄のビーチ風景">
+  <h1>名護ステイ 旅のしおり</h1>
+  <p>一生に一度の特別体験を、ここに。</p>
+  <p>2025/07/10 - 07/12</p>
+</header>
+
+<main>
+  <!-- 天気ウィジェット -->
+  <section id="weather">
+    <h2>名護の3日間天気予報</h2>
+    <div id="weather-widget">読み込み中…</div>
+  </section>
+
+  <!-- Day 0: 前撮りプラン -->
+  <section class="day">
+    <h2>Day 0: 前撮りプラン</h2>
+    <table>
+      <thead><tr><th>時刻</th><th>行程</th><th>所要分</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>10:00</td><td>ホテルロビー集合</td><td>—</td><td>¥0</td></tr>
+        <tr><td>10:30</td><td>ビーチ前撮り</td><td>60分</td><td>¥25,000</td></tr>
+        <tr><td>12:00</td><td>ホテルランチ</td><td>60分</td><td>¥6,000</td></tr>
+      </tbody>
+    </table>
     <figure>
-      <iframe class="map-embed" src="https://maps.google.com/maps?q=26.5935,127.9708&hl=ja&z=14&output=embed" allowfullscreen loading="lazy"></iframe>
-      <figcaption>名護市周辺マップ</figcaption>
+      <img loading="lazy" src="https://source.unsplash.com/featured/?pre-wedding,beach,okinawa" alt="ビーチでの前撮り">
+      <figcaption>ビーチフォトセッション</figcaption>
     </figure>
-    <section id="plans">
-      <h2>プラン選択</h2>
-      <select id="planSelect" class="select-plan">
-        <option value="A">のんびり映えスペシャル</option>
-        <option value="B">アクティブ探検スペシャル</option>
-      </select>
-      <div id="planSummary"></div>
-      <div id="planDisplay"></div>
-    </section>
-    <section id="gourmet">
-      <h2>おすすめグルメ</h2>
-      <div class="cards gourmet">
-        <div class="card">
-          <img src="https://source.unsplash.com/100x100/?okinawa,food" alt="沖縄そば">
-          <div class="info">
-            <strong>みやこ食堂</strong><br>
-            沖縄そば<br>
-            食べログ:3.82 / Google:4.2
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://source.unsplash.com/100x100/?seafood,okinawa" alt="海鮮料理">
-          <div class="info">
-            <strong>海風ダイニング</strong><br>
-            海鮮料理<br>
-            食べログ:3.88 / Google:4.3
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://source.unsplash.com/100x100/?cafe,okinawa" alt="カフェ">
-          <div class="info">
-            <strong>城カフェ</strong><br>
-            琉球茶とスイーツ<br>
-            食べログ:3.90 / Google:4.4
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="tasks">
-      <h2>予約タスク</h2>
-      <ul class="tasks" id="tasks"></ul>
-    </section>
-    <section id="contact">
-      <h2>お問い合わせ</h2>
-      <a href="tel:08064827952" class="cta">今すぐ予約</a>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 名護ステイガイド｜免責：情報は変更される場合があります</p>
-  </footer>
+    <iframe
+      src="https://maps.google.com/maps?q=オリエンタルホテル沖縄リゾート＆スパ&output=embed"
+      width="100%" height="200" frameborder="0" style="border:0;" loading="lazy"></iframe>
+  </section>
+
+  <!-- Day 1: のんびり映えプラン -->
+  <section class="day">
+    <h2>Day 1: のんびり映えプラン</h2>
+    <table>
+      <thead><tr><th>時刻</th><th>行程</th><th>所要分</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>09:00</td><td>ホテル朝食</td><td>60分</td><td>¥0</td></tr>
+        <tr><td>10:30</td><td>瀬底ビーチ散策</td><td>90分</td><td>¥0</td></tr>
+        <tr><td>12:30</td><td>カフェランチ</td><td>60分</td><td>¥4,000</td></tr>
+      </tbody>
+    </table>
+    <figure>
+      <img loading="lazy" src="https://source.unsplash.com/featured/?beach,okinawa" alt="瀬底ビーチ">
+      <figcaption>インスタ映えビーチ</figcaption>
+    </figure>
+    <iframe
+      src="https://maps.google.com/maps?q=瀬底ビーチ&output=embed"
+      width="100%" height="200" frameborder="0" style="border:0;" loading="lazy"></iframe>
+  </section>
+
+  <!-- Day 2: アクティブ探検プラン -->
+  <section class="day">
+    <h2>Day 2: アクティブ探検プラン</h2>
+    <table>
+      <thead><tr><th>時刻</th><th>行程</th><th>所要分</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>08:00</td><td>SUP体験</td><td>90分</td><td>¥8,000</td></tr>
+        <tr><td>11:00</td><td>地元食堂ランチ</td><td>60分</td><td>¥2,000</td></tr>
+        <tr><td>13:00</td><td>シュノーケリング</td><td>120分</td><td>¥7,000</td></tr>
+      </tbody>
+    </table>
+    <figure>
+      <img loading="lazy" src="https://source.unsplash.com/featured/?snorkeling,okinawa" alt="シュノーケリング">
+      <figcaption>海中探検</figcaption>
+    </figure>
+    <iframe
+      src="https://maps.google.com/maps?q=シュノーケリングスポット名護&output=embed"
+      width="100%" height="200" frameborder="0" style="border:0;" loading="lazy"></iframe>
+  </section>
+
+  <!-- 持ち物チェックリスト -->
+  <section id="checklist">
+    <h2>持ち物チェックリスト</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="item1"><label for="item1">パスポート</label></li>
+      <li><input type="checkbox" id="item2"><label for="item2">サングラス</label></li>
+      <li><input type="checkbox" id="item3"><label for="item3">日焼け止め</label></li>
+      <li><input type="checkbox" id="item4"><label for="item4">水着</label></li>
+      <li><input type="checkbox" id="item5"><label for="item5">モバイルバッテリー</label></li>
+    </ul>
+  </section>
+
+  <!-- 重要連絡先 -->
+  <section id="contacts">
+    <h2>重要連絡先</h2>
+    <ul>
+      <li>ホテル: <a href="tel:0980511000">0980-51-1000</a></li>
+      <li>SUP: <a href="tel:08064827952">080-6482-7952</a></li>
+      <li>警察: <a href="tel:110">110</a></li>
+      <li>救急: <a href="tel:119">119</a></li>
+    </ul>
+  </section>
+
+  <!-- おすすめグルメ -->
+  <section id="restaurants">
+    <h2>ホテルから車で行けるおすすめグルメ</h2>
+    <ul>
+      <li><strong>百年古家 大家</strong>（3.49／708件）…名護市中山90、車で約20分。<a href="https://maps.google.com/maps?q=百年古家 大家">地図</a> :contentReference[oaicite:0]{index=0}</li>
+      <li><strong>美ら花 別邸</strong>（3.47／317件）…名護市宮里439、車で約15分。<a href="https://maps.google.com/maps?q=美ら花 別邸 名護">地図</a> :contentReference[oaicite:1]{index=1}</li>
+      <li><strong>さくら食堂</strong>（3.39／88件）…名護市営市場2階、車で約10分。<a href="https://maps.google.com/maps?q=さくら食堂 名護">地図</a> :contentReference[oaicite:2]{index=2}</li>
+      <li><strong>名護曲レストラン</strong>（3.41／188件）…名護市〇〇、車で約10分。<a href="https://maps.google.com/maps?q=名護曲レストラン">地図</a> :contentReference[oaicite:3]{index=3}</li>
+      <li><strong>幸ちゃんそば</strong>（4.0）…名護市〇〇、車で約5分。<a href="https://maps.google.com/maps?q=幸ちゃんそば">地図</a> :contentReference[oaicite:4]{index=4}</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>情報は2025-07-07時点。公式確認必須。</p>
+  <p><a href="https://sho71004.github.io/repo-name/">GitHub Pages</a></p>
+</footer>
+
+<script>
+  // 天気コード→日本語説明マッピング
+  const wcDesc = {
+    0:'晴天',1:'主に晴天',2:'部分的に晴天',3:'曇り',
+    45:'霧',48:'氷霧',51:'弱い霧雨',53:'中程度の霧雨',55:'濃霧雨',
+    61:'小雨',63:'やや強い雨',65:'激しい雨',
+    80:'弱いにわか雨',81:'中程度のにわか雨',82:'激しいにわか雨',
+    95:'雷雨',96:'雷雨と雹',99:'激しい雷雨と雹'
+  };
+  (async ()=>{
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=26.5923&longitude=127.9818&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo';
+    const res = await fetch(url);
+    const data = await res.json();
+    let html = '<table><tr><th>日付</th><th>最高/最低(°C)</th><th>天気</th></tr>';
+    data.daily.time.slice(0,3).forEach((d,i)=>{
+      const code = data.daily.weathercode[i];
+      const desc = wcDesc[code] || code;
+      html += `<tr><td>${d}</td><td>${data.daily.temperature_2m_max[i]} / ${data.daily.temperature_2m_min[i]}</td><td>${desc}</td></tr>`;
+    });
+    html += '</table>';
+    document.getElementById('weather-widget').innerHTML = html;
+  })();
+
+  // 持ち物チェックリストの LocalStorage 保存
+  document.querySelectorAll('.checklist input').forEach(cb=>{
+    cb.checked = localStorage.getItem(cb.id)==='true';
+    cb.addEventListener('change', ()=> localStorage.setItem(cb.id, cb.checked));
+  });
+</script>
+
 </body>
 </html>
