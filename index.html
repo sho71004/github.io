@@ -1,22 +1,46 @@
-<!doctype html><html lang="ja"><meta charset="utf-8">
-<title>飯田ふとん店5%OFF</title>
+件名：【共有】HTMLコード完成
+
+■index.html
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>口コミで5%OFF | 西川チェーン飯田ふとん店</title>
 <style>
-body{margin:0;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh}
-.card{border:6px solid #00A0E9;padding:20px;text-align:center}
-h1{background:#00A0E9;color:#fff;margin:0 0 12px;padding:6px;font-size:1.8em}
-h2{margin:8px 0;font-size:1.2em}
-ol{margin:0;padding-left:18px;text-align:left;font-size:1em}
+:root{--accent:#00A0E9;--fg:#222}
+*{box-sizing:border-box;margin:0;padding:0}
+body{display:flex;justify-content:center;align-items:center;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Arial,sans-serif;background:#f7f9fc}
+.card{max-width:420px;text-align:center;border:8px solid var(--accent);background:#fff;padding:2rem 2.5rem;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.card h1{background:var(--accent);color:#fff;font-size:1.9rem;line-height:1.3;padding:.6rem 1rem;margin-bottom:1.2rem}
+.qr img{width:260px;height:260px}
+.catch{font-size:1.25rem;margin:1rem 0}
+.catch span{color:var(--accent);font-weight:700;font-size:1.4rem}
+.steps{margin:1rem auto 1.2rem;text-align:left;padding-left:1.2rem;font-size:1.05rem;line-height:1.6}
+.steps li{margin-bottom:.35rem}
+.note{font-size:.8rem;color:#555}
 </style>
+</head>
 <body>
-<div class=card>
-<h1>西川チェーン<br>飯田ふとん店</h1>
-<img src="https://chart.googleapis.com/chart?chs=240x240&cht=qr&chl=https%3A%2F%2Fmaps.app.goo.gl%2FetmAzxdmmcTBYzkA8%3Fg_st%3Dipc" width=240 height=240 alt="QR">
-<h2>口コミ投稿で当日<strong>5%OFF!</strong></h2>
-<ol>
-<li>QR読み込みレビュー投稿
-<li>投稿画面をレジ提示
-<li>その場で割引
-</ol>
-<p style="font-size:.8em">※クーポンは当日限り有効</p>
-</div>
-</body></html>
+  <div class="card">
+    <h1>西川チェーン<br>飯田ふとん店</h1>
+
+    <!-- 正しい店舗URLをエンコードしたQRコード -->
+    <div class="qr">
+      <img src="https://chart.googleapis.com/chart?cht=qr&chs=260x260&chld=L|0&choe=UTF-8&chl=https%3A%2F%2Fmaps.app.goo.gl%2FetmAzxdmmcTBYzkA8%3Fg_st%3Dipc"
+           alt="Google 口コミ用QRコード">
+    </div>
+
+    <p class="catch">レビュー投稿で <span>いつでも5%OFF!</span></p>
+
+    <ol class="steps">
+      <li>QRコードを読み取る</li>
+      <li>Googleでレビューを投稿</li>
+      <li>投稿画面をレジで提示</li>
+    </ol>
+
+    <p class="note">※クーポンは発行日から30日間有効です</p>
+  </div>
+</body>
+</html>
